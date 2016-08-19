@@ -58,16 +58,16 @@ def entry():
     for x in range(0,args.count):
         try:
             account_info = pikapy.random_account(args.username, args.password, args.email, args.birthday, args.plusmail)
-            
+
             print('  Username:  {}'.format(account_info["username"]))
             print('  Password:  {}'.format(account_info["password"]))
             print('  Email   :  {}'.format(account_info["email"]))
             print('\n')
-            
+
             # Accept Terms Service
-            
-            accept_tos(account_info["username"], account_info["password"])
-            # Append usernames 
+
+            #accept_tos(account_info["username"], account_info["password"])
+            # Append usernames
             with open("usernames.txt", "a") as ulist:
                 ulist.write(account_info["username"]+":"+account_info["password"]+"\n")
                 ulist.close()
